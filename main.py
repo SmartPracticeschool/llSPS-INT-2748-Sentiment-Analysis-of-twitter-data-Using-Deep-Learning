@@ -27,13 +27,13 @@ for i in range(0, 10000):
     tweet = ' '.join(tweet)
     data.append(tweet)
 print(tweet)
-from sklearn.feature_extraction.text import CountVectorizer
 
-cv = CountVectorizer(max_features=2000)
-x = cv.fit_transform(data).toarray()
+x = dataset[['emotion', 'tweet']]
 
-y = dataset.iloc[:, 0].values
+y = dataset['emotion']
 
 from sklearn.model_selection import train_test_split
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+
+import keras
