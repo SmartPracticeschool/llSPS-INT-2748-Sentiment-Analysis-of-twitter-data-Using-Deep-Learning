@@ -8,3 +8,15 @@ The dataset is imported.
 The dataset got removed punctuation and numbers.
 The dataset got all words changed into lower case.
 The dataset got stemming done.
+
+After processing the dataset it gives out a sample tweet with all processing done.
+Splitted dataset into training and testing part.
+After that created model.
+After creating model Initialized model.
+Added input layer
+Added Hidden Layer
+Added Output Layer
+Configured learning process
+Optimized the model.
+Saved the Model.
+
