@@ -1,0 +1,8 @@
+warnings
+flask
+json
+pandas
+scikit-learn
+keras
+numpy
+tensorflow

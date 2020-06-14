@@ -1,0 +1,37 @@
+
+<html>
+    <head>
+    <title>Deep Learning Project for SmartBridge</title>
+    <style>
+        h1 {
+            text-align : center;
+        }
+    </style>
+</head>
+        
+<body>
+    <h1> Deep Learning Sentiment Analysis </h1>
+    
+    <h2>Please enter your text to analyse the emotion and then press TAB key to analyze </h2>
+    <textarea name="Enter your text" id="text" cols="30" rows="10" style = "border:solid 2px blue; border-radius: 20px; padding:10px"></textarea>
+    
+    <h3>Your text says the following emotion</h3>
+    <textarea name="Emotion" id="result" cols="30" rows="10" style = "border:solid 2px blue; border-radius: 20px;  padding:10px"></textarea>
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#text").blur(function(){
+                $("#result").val('Loading...');
+                var url = './predict?text='+$("#text").val();
+                $.getJSON(url,function(data){
+                    $("#result").val("The above text represents "+data[0].category+" emotion")
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
